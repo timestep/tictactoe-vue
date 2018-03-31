@@ -1,14 +1,11 @@
 <template>
-  <div class="card">
-    {{ state }}
+  <div class="dib tc v-mid">
   </div>
 </template>
 
 <script>
-import Card from './components/Card.vue';
-
 export default {
-  name: 'Board',
+  name: 'Card',
   props: {
     state: String,
   },
