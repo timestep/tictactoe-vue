@@ -1,20 +1,23 @@
 <template>
-  <div class="dib tc v-mid" v-on:click="trigger(x, y, 1)" >
+  <div class="dib tc v-mid" @click="trigger({x, y, value: 1})">
+    {{getCardState(x,y)}}
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Card',
   props: {
-    state: String,
     x: Number,
     y: Number,
   },
+  computed: {
+    ...mapGetters(['getCardState']),
+  },
   methods: {
-    ...mapActions({ trigger: 'trigger' }),
+    ...mapActions(['trigger']),
   },
 };
 </script>

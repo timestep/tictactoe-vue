@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 import App from './App.vue';
 
-import { state, mutations, actions } from './store';
+import { state, mutations, actions, getters } from './store';
 
 Vue.config.productionTip = false;
 
@@ -13,6 +13,7 @@ const store = new Vuex.Store({
   state,
   mutations,
   actions,
+  getters,
 });
 
 new Vue({
