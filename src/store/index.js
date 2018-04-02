@@ -7,8 +7,9 @@ export const state = {
 
 export const mutations = {
   change(state, { x, y, value }) {
-    const { newBoard, winner } = evaluateNewBoard(state.board, x, y, value);
-    state.board = newBoard;
+    // theres a bug where it doesnt really map in the data, but ui shows it correctly
+    const { board, winner } = evaluateNewBoard(state.board, x, y, value);
+    state.board = board;
     state.winner = winner;
   },
 };
@@ -59,6 +60,8 @@ const evaluateNewBoard = (board, x, y, value) => {
   10,11,12,
   20,21,22
 */
+
+const aiPlay = board => {};
 
 const winCondition = (board, player) => {
   if (
